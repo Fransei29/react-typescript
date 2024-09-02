@@ -1,11 +1,14 @@
 import React, { useState } from "react"
 import axios from "axios"
 
-const Form = (props) => {
+type FormProps = {
+  onSubmit: Function
+}
 
+const Form = (props: FormProps) => {
   const [username, setUsername] = useState("")
   
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.FormEvent<EventTarget>) => {
     event.preventDefault()
 
     axios.get(`https://api.github.com/users/${username}`).then((resp) => {

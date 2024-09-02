@@ -1,13 +1,17 @@
 import React from "react" // Import React
-import Card from "./Card.js" // Import the Card component
+import Card from './Card' // Import the Card component
+import { GitHubCard } from '../App'
+
+type CardListProps = {
+  cards: GitHubCard[]
+}
 
 // CardList component that takes props as an argument
-const CardList = (props) => (
+const CardList = (props: CardListProps) => (
   <div id="container" className="mt-10">
     {/* Map over the cards array passed via props and render a Card component for each card */}
-    {props.cards.map((card, index) => (
-      // Spread the card properties into the Card component
-      <Card key={index} {...card} />
+    {props.cards.map((card, index) => ( 
+      <Card key={index} {...card} />    // Spread the card properties into the Card component
     ))}
   </div>
 )

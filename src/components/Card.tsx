@@ -1,6 +1,18 @@
 import React from "react"
 
-const Card = (props) => {
+type CardProps = {                 // List all the properties we use inside the component’s JSX.
+  avatar_url: string;
+  name: string,
+  login: string,
+  public_repos: string,
+  created_at: string,
+  location: string,
+  bio: string,
+  html_url: string,
+  blog: string,
+}
+
+const Card = (props: CardProps) => {
     return (
       <div className="px-4 py-5 sm:px-6 -ml-4 -mt-4 border-b border-gray-200 pb-8 flex justify-between items-center flex-wrap sm:flex-no-wrap">
         <div className="ml-4 mt-4">

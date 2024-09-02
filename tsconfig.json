@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "ESNext",
+    "jsx": "react-jsx", // Configuración para JSX en React
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "moduleResolution": "node", // Asegura la resolución de módulos al estilo Node.js
+    "resolveJsonModule": true,
+    "baseUrl": "./",
+    "outDir": "./dist",
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true
+  },
+  "include": ["src"]
+}
