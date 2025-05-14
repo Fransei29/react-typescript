@@ -8,7 +8,7 @@ type CardListProps = {
 
 // CardList component that takes props as an argument
 const CardList = (props: CardListProps) => (
-  <div id="container" className="mt-10">
+  <div id="container" className="mt-15">
     {/* Map over the cards array passed via props and render a Card component for each card */}
     {props.cards.map((card, index) => ( 
       <Card key={index} {...card} />    // Spread the card properties into the Card component

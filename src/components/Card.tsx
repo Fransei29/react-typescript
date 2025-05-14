@@ -1,69 +1,65 @@
 import React from "react"
 
-type CardProps = {                 // List all the properties we use inside the component’s JSX.
+type CardProps = {
   avatar_url: string;
-  name: string,
-  login: string,
-  public_repos: string,
-  created_at: string,
-  location: string,
-  bio: string,
-  html_url: string,
-  blog: string,
-}
+  name: string;
+  login: string;
+  public_repos: string;
+  created_at: string;
+  location: string;
+  bio: string;
+  html_url: string;
+  blog: string;
+};
 
 const Card = (props: CardProps) => {
-    return (
-      <div className="px-4 py-5 sm:px-6 -ml-4 -mt-4 border-b border-gray-200 pb-8 flex justify-between items-center flex-wrap sm:flex-no-wrap">
-        <div className="ml-4 mt-4">
-          <div className="flex items-center">
-            <div className="flex-shrink-0">
-              <img
-                className="h-12 w-12 rounded-full"
-                src={props.avatar_url}
-                alt=""
-              />
-            </div>
-            <div className="ml-4">
-              <h3 className="text-lg leading-6 font-medium text-gray-900">
-                {props.name}
-                <span className="text-sm leading-5 text-gray-500 pl-2">
-                  @{props.login}
-                </span>
-              </h3>
-              <p className="text-sm leading-5 text-gray-500">
-                {props.public_repos} repositories. User since{" "}
-                {props.created_at.slice(0, 4)}
-              </p>
-              <p className="text-sm leading-5 text-gray-500">
-                {props.location || ""}
-              </p>
-              <p className="mt-1 text-sm leading-5 text-gray-500">{props.bio}</p>
-            </div>
-          </div>
-        </div>
-        <div className="ml-4 mt-4 flex-shrink-0 flex">
-          <span className="ml-3 inline-flex rounded-md shadow-sm">
-            <a href={props.html_url}>
-              <button
-                type="button"
-                className="mr-2 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm leading-5 font-medium rounded-md text-gray-700 bg-white hover:text-gray-500 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:bg-gray-50 active:text-gray-800"
-              >
-                <span>Profile</span>
-              </button>
-            </a>
-            <a href={props.blog}>
-              <button
-                type="button"
-                className="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm leading-5 font-medium rounded-md text-gray-700 bg-white hover:text-gray-500 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:bg-gray-50 active:text-gray-800"
-              >
-                <span>Website</span>
-              </button>
-            </a>
-          </span>
+  return (
+    <div className="max-w-[900px] mx-auto px-20 py-6 border-b border-gray-300 flex justify-between items-start flex-wrap gap-y-6 bg-white/70 backdrop-blur-md rounded-lg shadow-sm">
+      <div className="flex items-start gap-4">
+        <img
+          className="h-14 w-14 rounded-full object-cover"
+          src={props.avatar_url}
+          alt={props.name}
+        />
+        <div>
+          <h3 className="text-xl font-semibold text-gray-800">
+            {props.name}
+            <span className="text-sm text-gray-600 pl-2">@{props.login}</span>
+          </h3>
+          <p className="text-sm text-gray-700 mt-1">
+            {props.public_repos} repositories • User since {props.created_at.slice(0, 4)}
+          </p>
+          {props.location && (
+            <p className="text-sm text-gray-700">{props.location}</p>
+          )}
+          {props.bio && (
+            <p className="text-sm text-gray-700 mt-1">{props.bio}</p>
+          )}
         </div>
       </div>
-    )
-}
 
-export default Card
+      <div className="flex gap-2">
+        <a href={props.html_url} target="_blank" rel="noopener noreferrer">
+          <button
+            type="button"
+            className="px-4 py-2 border border-gray-400 text-sm font-medium rounded-md text-gray-800 bg-white hover:bg-gray-100 transition"
+          >
+            Profile
+          </button>
+        </a>
+        {props.blog && (
+          <a href={props.blog} target="_blank" rel="noopener noreferrer">
+            <button
+              type="button"
+              className="px-4 py-2 border border-gray-400 text-sm font-medium rounded-md text-gray-800 bg-white hover:bg-gray-100 transition"
+            >
+              Website
+            </button>
+          </a>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default Card;
