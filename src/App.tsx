@@ -27,9 +27,11 @@ function App() {
   
   return (
     <div>
-      <h1 className="pt-10 text-center mt-6 text-3xl leading-9 font-extrabold text-gray-900">
-        Search a GitHub User
-      </h1>
+   <h1 className="pt-20 text-2xl font-semibold text-gray-100 text-center">
+      Search GitHub Users
+    </h1>
+
+
       <Form onSubmit={addNewCard}/>           {/* Form component to submit new cards, passing the addNewCard function as a prop */}
       <CardList cards={cards} />              {/* CardList component to display the list of cards, passing the cards state as a prop */}
     </div>

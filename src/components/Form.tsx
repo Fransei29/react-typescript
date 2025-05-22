@@ -18,25 +18,25 @@ const Form = (props: FormProps) => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="w-full max-w-sm mx-auto"  >
+    <form onSubmit={handleSubmit} className="w-full max-w-sm mx-auto">
       <div className="mt-8 flex">
         <input
           value={username}
           onChange={(event) => setUsername(event.target.value)}
           type="text"
           placeholder="GitHub username"
-          className="form-input block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-black focus:border-black-300 transition duration-150"
+          className="form-input block w-full py-2 px-3 bg-gray-800 border border-gray-600 text-gray-200 placeholder-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150"
           required
         />
         <button
           type="submit"
-          className="ml-2 py-2 px-6 border border-gray-300 rounded-md text-sm leading-6 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition duration-150 ease-in-out"
+          className="ml-2 py-2 px-6 border border-gray-600 rounded-md text-sm leading-6 font-medium text-gray-200 bg-gray-800 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-150 ease-in-out"
         >
           Search
         </button>
       </div>
     </form>
   )
-}
+};  
 
 export default Form
